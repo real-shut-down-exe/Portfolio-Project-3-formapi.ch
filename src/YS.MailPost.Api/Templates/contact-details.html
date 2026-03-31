@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Kontaktformular – Neue Anfrage</title>
+
+    <style>
+        /* Some clients respect embedded styles; still keep key things inline below */
+        @media (max-width: 640px) {
+            .container {
+                width: 100% !important;
+            }
+
+            .px {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            .card {
+                padding: 16px !important;
+            }
+
+            .col {
+                display: block !important;
+                width: 100% !important;
+            }
+
+                .col + .col {
+                    margin-top: 12px !important;
+                }
+
+            .h1 {
+                font-size: 20px !important;
+                line-height: 28px !important;
+            }
+
+            .muted {
+                font-size: 12px !important;
+            }
+        }
+
+        /* Dark mode (works in some clients) */
+        @media (prefers-color-scheme: dark) {
+            .bg {
+                background: #0f1115 !important;
+            }
+
+            .cardWrap {
+                background: #151922 !important;
+            }
+
+            .card {
+                background: #1b2230 !important;
+                border-color: #2a3447 !important;
+            }
+
+            .text {
+                color: #e7ecf5 !important;
+            }
+
+            .muted, .label {
+                color: #a9b4c7 !important;
+            }
+
+            .chip {
+                background: #24324a !important;
+                color: #e7ecf5 !important;
+                border-color: #2a3447 !important;
+            }
+
+            .divider {
+                border-top-color: #2a3447 !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin:0; padding:0; background:#f2f3f5;">
+    <!-- Preheader (hidden) -->
+    <div style="display:none; font-size:1px; color:#f2f3f5; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">
+        Neue Kontaktformular-Anfrage von {{name}} – {{subject}}
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="bg" style="background:#f2f3f5;">
+        <tr>
+            <td align="center" style="padding:24px 12px;">
+                <!-- Container -->
+                <table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0" class="container" style="width:640px; max-width:640px;">
+                    <!-- Header -->
+                    <tr>
+                        <td class="px" style="padding:0 24px 12px 24px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="left" style="padding:0;">
+                                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:12px; color:#6b7280;">
+                                            Kontaktformular
+                                        </div>
+                                        <div class="h1" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:24px; line-height:32px; font-weight:700; color:#111827; margin-top:6px;">
+                                            Neue Anfrage erhalten
+                                        </div>
+                                        <div class="muted" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:13px; color:#6b7280; margin-top:6px;">
+                                            Eingegangen am <strong style="color:#111827; font-weight:600;">{{submitted_at}}</strong>
+                                        </div>
+                                    </td>
+                                    <td align="right" style="padding:0; vertical-align:top;">
+                                        <!-- Status chip -->
+                                        <span class="chip"
+                                              style="display:inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+                        font-size:12px; line-height:18px; padding:6px 10px; border:1px solid #e5e7eb; border-radius:999px;
+                        background:#ffffff; color:#111827;">
+                                            Neue Nachricht
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Card wrap -->
+                    <tr>
+                        <td class="px cardWrap" style="padding:0 24px;">
+                            <!-- Main card -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                   style="background:#ffffff; border:1px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+                                <tr>
+                                    <td class="card" style="padding:20px;">
+                                        <!-- Two columns (desktop), stacked (mobile) -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <!-- Left col -->
+                                                <td class="col" width="50%" style="vertical-align:top; padding-right:10px;">
+                                                    <!-- Field card -->
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                           style="background:#fafafa; border:1px solid #eeeeee; border-radius:12px;">
+                                                        <tr>
+                                                            <td style="padding:12px 12px 10px 12px;">
+                                                                <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280; letter-spacing:0.2px;">
+                                                                    Name
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; font-weight:600; margin-top:4px;">
+                                                                    {{name}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div style="height:10px; line-height:10px;">&nbsp;</div>
+
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                           style="background:#fafafa; border:1px solid #eeeeee; border-radius:12px;">
+                                                        <tr>
+                                                            <td style="padding:12px 12px 10px 12px;">
+                                                                <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280;">
+                                                                    E-Mail
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; font-weight:600; margin-top:4px;">
+                                                                    <a href="mailto:{{email}}" style="color:#2563eb; text-decoration:none;">{{email}}</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div style="height:10px; line-height:10px;">&nbsp;</div>
+
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                           style="background:#fafafa; border:1px solid #eeeeee; border-radius:12px;">
+                                                        <tr>
+                                                            <td style="padding:12px 12px 10px 12px;">
+                                                                <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280;">
+                                                                    Unternehmen
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; font-weight:600; margin-top:4px;">
+                                                                    {{company}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+
+                                                <!-- Right col -->
+                                                <td class="col" width="50%" style="vertical-align:top; padding-left:10px;">
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                           style="background:#fafafa; border:1px solid #eeeeee; border-radius:12px;">
+                                                        <tr>
+                                                            <td style="padding:12px 12px 10px 12px;">
+                                                                <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280;">
+                                                                    Telefon
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; font-weight:600; margin-top:4px;">
+                                                                    <a href="tel:{{phone}}" style="color:#111827; text-decoration:none;">{{phone}}</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div style="height:10px; line-height:10px;">&nbsp;</div>
+
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                           style="background:#fafafa; border:1px solid #eeeeee; border-radius:12px;">
+                                                        <tr>
+                                                            <td style="padding:12px 12px 10px 12px;">
+                                                                <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280;">
+                                                                    Betreff
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; font-weight:700; margin-top:4px;">
+                                                                    {{subject}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div style="height:10px; line-height:10px;">&nbsp;</div>
+
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                           style="background:#fafafa; border:1px solid #eeeeee; border-radius:12px;">
+                                                        <tr>
+                                                            <td style="padding:12px 12px 10px 12px;">
+                                                                <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280;">
+                                                                    Datenschutz akzeptiert
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; font-weight:600; margin-top:4px;">
+                                                                    {{privacy_policy_accepted}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="height:14px; line-height:14px;">&nbsp;</div>
+
+                                        <!-- Message -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                                               style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px;">
+                                            <tr>
+                                                <td style="padding:14px 14px 12px 14px;">
+                                                    <div class="label" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:11px; color:#6b7280;">
+                                                        Nachricht
+                                                    </div>
+                                                    <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:14px; color:#111827; line-height:22px; margin-top:6px; white-space:pre-wrap;">
+                                                        {{message}}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="height:16px; line-height:16px;">&nbsp;</div>
+
+                                        <!-- Meta -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="padding:0;">
+                                                    <div class="divider" style="border-top:1px solid #e5e7eb; margin:0;"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top:12px;">
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td class="col" width="50%" style="vertical-align:top;">
+                                                                <div class="muted" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:12px; color:#6b7280;">
+                                                                    IP-Adresse
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:13px; color:#111827; font-weight:600; margin-top:3px;">
+                                                                    {{ip_address}}
+                                                                </div>
+                                                            </td>
+                                                            <td class="col" width="50%" style="vertical-align:top;">
+                                                                <div class="muted" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:12px; color:#6b7280;">
+                                                                    User Agent
+                                                                </div>
+                                                                <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:12px; color:#111827; line-height:18px; margin-top:3px; word-break:break-word;">
+                                                                    {{user_agent}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Footer spacing -->
+                            <div style="height:16px; line-height:16px;">&nbsp;</div>
+
+                            <!-- Footer note -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="left" style="padding:0 2px;">
+                                        <div class="muted" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:12px; color:#6b7280; line-height:18px;">
+                                            Diese E-Mail wurde automatisch durch das Kontaktformular gesendet.
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <!-- Bottom padding -->
+                    <tr>
+                        <td style="height:18px; line-height:18px;">&nbsp;</td>
+                    </tr>
+                </table>
+                <!-- /Container -->
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
